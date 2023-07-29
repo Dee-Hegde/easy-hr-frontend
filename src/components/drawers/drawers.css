@@ -1,0 +1,18 @@
+
+/* Navigation Drawers */
+.nd-title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color-1);
+}
+.nd-title-container img{
+   width: 150px;
+   height: 30px;
+}
+.drawer-close{
+    font-size: 20px !important;
+    cursor: pointer;
+}

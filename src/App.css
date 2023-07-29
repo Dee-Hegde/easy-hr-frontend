@@ -1,0 +1,155 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+/* antd Css import */
+
+/* Css Files import */
+@import url('./containers//login/Login.css');
+@import url('./containers/navbar/navbar.css');
+@import url('./components/drawers/drawers.css');
+
+/* Light mode color variables */
+:root {
+  --primary-background: #f7f7f7;
+  --app-background: #ffffff;
+
+  --error-red: #ea3b42;
+  --warning: #c64b00;
+
+  --text-color-1: #4e4e4e;
+  --text-color-2: #182470;
+  --text-color-3: #191919;
+  --text-color-4: #ffffff;
+
+  --border-color-1: #e8e8e4;
+  --border-color-2: #182470;
+
+  --primary-dependency: #31a93e;
+  --secondary-dependency: #bfe4c3;
+  --third-dependency: #e9f6ea;
+
+  --avatar-color: #d9dbf3;
+  --primary-btn-hover: #6136c6;
+  --primary-btn-background: #4317a9;
+  --secondary-btn-background: #ffffff;
+  --secondary-btn-hover: #edebf0;
+  --disabled-btn-background: linear-gradient(
+    92.42deg,
+    rgba(24, 27, 78, 0.5) -20.53%,
+    rgba(155, 53, 129, 0.5) 18.39%,
+    rgba(232, 70, 128, 0.5) 54.73%,
+    rgba(236, 97, 78, 0.5) 97.97%
+  );
+}
+/* dark mode color variables */
+/* .dark {
+  --primary-background: #f7f7f7;
+  --app-background: #ffffff;
+
+  --error-red: #ea3b42;
+  --warning: #c64b00;
+
+  --text-color-1: #4e4e4e;
+  --text-color-2: #182470;
+  --text-color-3: #191919;
+  --text-color-4: #ffffff;
+
+  --border-color-1: #e8e8e4;
+  --border-color-2: #182470;
+
+  --primary-dependency: #31a93e;
+  --secondary-dependency: #bfe4c3;
+  --third-dependency: #e9f6ea;
+
+  --avatar-color: #d9dbf3;
+  --primary-btn-background: #6b14c8;
+  --secondary-btn-background: #ffffff;
+  --disabled-btn-background: linear-gradient(
+    92.42deg,
+    rgba(24, 27, 78, 0.5) -20.53%,
+    rgba(155, 53, 129, 0.5) 18.39%,
+    rgba(232, 70, 128, 0.5) 54.73%,
+    rgba(236, 97, 78, 0.5) 97.97%
+  );
+} */
+
+body {
+  max-width: 100% !important;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Nunito', sans-serif !important;
+  background: var(--primary-background);
+  font-size: 10px;
+  position: relative;
+
+}
+.App{
+  position: relative;
+  width: 100% !important;
+}
+
+.ant-input {
+  width: 100% !important;
+  height: 50px !important;
+  padding: 12px;
+  font-size: 1.2rem;
+}
+.ant-input-affix-wrapper > input.ant-input {
+  font-size: 1.2rem;
+  height: 40px !important;
+}
+.error-text {
+  color: var(--error-red) !important;
+  font-size: 0.9rem !important;
+  margin: 0px !important;
+}
+
+.primary-button {
+  width: 100%;
+  height: 50px !important;
+  background: var(--primary-btn-background) !important;
+  color: var(--text-color-4) !important;
+  outline: none !important;
+  border: 1px solid var(--primary-btn-background);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.primary-button:hover {
+  color: var(--text-color-4) !important;
+  border-color: 1px solid var(--primary-btn-background) !important;
+  background-color: var(--primary-btn-hover) !important;
+}
+.secondary-btn {
+  width: 100%;
+  height: 50px !important;
+  background: var(--secondary-btn-background) !important;
+  color: var(--text-color-2) !important;
+  outline: none !important;
+  border: 1px solid var(--primary-btn-background);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.secondary-btn:hover {
+  background: var(--secondary-btn-hover) !important;
+  color: var(--text-color-2) !important;
+  border: 1px solid var(--primary-btn-background);
+}
+.secondary-btn div {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+/* Drawer Body */
+.ant-drawer .ant-drawer-body{
+  padding: 16px !important;
+}
