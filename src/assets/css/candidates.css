@@ -1,0 +1,16 @@
+.co-main-container {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+
+}
+.co-title-container {
+  width: 100%;
+  background: var(--app-background);
+  padding: 0px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ 
+}

@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from '../../assets/images/logo.svg';
-
-import {  
+import logo from '../assets/images/logo.svg';
+import {
   CalendarOutlined,
   CaretRightOutlined,
   CloseCircleOutlined,
@@ -11,9 +10,7 @@ import {
   UsergroupAddOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
-import DrawerWrappers from '../customfiles/DrawerWrappers';
-
-
+import DrawerWrappers from './customfiles/drawers/DrawerWrappers';
 
 function NavigationDrawers({ open, close }) {
   const appNavigations = [
@@ -47,7 +44,9 @@ function NavigationDrawers({ open, close }) {
     <DrawerWrappers
       open={open}
       close={close}
-      placement={'left'}>
+      placement={'left'}
+      width={300}
+      >
       <div className='nd-title-container'>
         <img
           src={logo}
@@ -70,7 +69,7 @@ function NavigationDrawers({ open, close }) {
                 <CaretRightOutlined />
               </Link>
             </li>
-          ))} 
+          ))}
         </ul>
       </div>
     </DrawerWrappers>

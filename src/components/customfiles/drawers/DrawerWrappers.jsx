@@ -6,7 +6,7 @@ function DrawerWrappers(props) {
   return (
     <Drawer
       placement={props.placement}
-      width={300}
+      width={props.width}
       onClose={props.onClose}
       closeIcon={false}
       closable={false}

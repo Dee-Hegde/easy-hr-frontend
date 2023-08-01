@@ -4,7 +4,7 @@ import logo from '../../assets/images/logo.svg';
 import googleLogo from '../../assets/images/login/googleLogo.svg';
 import { Input } from 'antd';
 import { useGoogleLogin } from '@react-oauth/google';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { checkIsValid } from '../../utils/commonFunctions';
 import { formats } from '../../utils/constants';
 
@@ -18,7 +18,6 @@ function Login() {
     setLoginData({ ...loginData, [name]: value });
     setError({ ...error, [name]: '' });
   };
-
 
   const handleLogin = () => {
     if (!loginData.email || !checkIsValid(loginData.email, formats.email)) {
@@ -40,69 +39,65 @@ function Login() {
   const googleLogin = useGoogleLogin({
     onSuccess: (tokenResponse) => navigate('/dashboard'),
   });
+
   return (
-    <div className="login-main-container">
-      <div className="login-main-inputs-container">
-        <div className="login-inputs-container">
+    <div className='login-main-container'>
+      <div className='login-left-container'>
+        <div className='login-container'>
           <img
             src={logo}
-            alt="logo"
+            alt='logo'
           />
-          <h3 className="login-welcome-title">Welcome!.</h3>
-          <div>
-            <label>
-              Email <span className="error-text">*</span>
-            </label>
+          <h2>Welcome!.</h2>
+          <div className='login-input-container'>
+            <label>Email</label>
             <Input
-              value={loginData.email}
+              className='basic-input '
+              placeholder='Email'
               onChange={handleInputs}
-              name="email"
-              placeholder="Email"
+              name='email'
             />
-            {error.email && <p className="error-text">{error.email}</p>}
+            {error?.email && (
+              <span className='email-error'>{error?.email}</span>
+            )}
           </div>
-          <div>
-            <label>
-              Password <span className="error-text">*</span>
-            </label>
+          <div className='login-input-container'>
+            <label>Password</label>
             <Input.Password
-              value={loginData.password}
+              className='basic-input '
+              placeholder='Password'
               onChange={handleInputs}
               name="password"
-              placeholder="Password"
             />
-            {error.password && <p className="error-text">{error.password}</p>}
+            <div className='login-error-container'>
+              {error?.password && (
+                <span className='validation-error'>{error?.password}</span>
+              )}
+              <Link to='/forgot-password'>Forgot Password? </Link>
+            </div>
           </div>
-          <div className="login-fp-container">
-            <p>
-              Forgot Password? <span>Click here</span>
-            </p>
-          </div>
-
-          <div className="login-btn-container">
+          <div className='login-input-container'>
             <button
               onClick={handleLogin}
-              className="primary-button">
+              className='primary-button '>
               Login
             </button>
             <button
-              className="secondary-btn "
-              onClick={() => googleLogin()}>
-              <div>
-                <img
-                  src={googleLogo}
-                  alt=""
-                />
-                <span>Login with Google</span>
-              </div>
+              onClick={googleLogin}
+              className='secondary-button'>
+              <img
+                src={googleLogo}
+                alt=''
+              />
+              Google Login
             </button>
           </div>
         </div>
       </div>
-      <div className="login-vector-container">
+      <div className='login-image-container'>
         <img
           src={HROffice}
-          alt=""
+          alt=''
         />
       </div>
     </div>

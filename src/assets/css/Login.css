@@ -1,0 +1,76 @@
+.login-main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.login-left-container {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  border: 1px solid var(--border-color-1);
+  border-radius: 8px;
+  padding: 16px;
+}
+.login-input-container {
+  width: 90%;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding:10px;
+  padding-bottom: 16px;
+  position: relative;
+}
+.login-input-container label{
+  width: 100%;
+  font-size: 14px;
+}
+.login-image-container {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-image-container img {
+  width: 90%;
+  height: auto;
+}
+.login-error-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  font-size: 12px;
+}
+.validation-error{
+  position: absolute;
+  left: 0;
+  top: -2px;
+  color: var( --error-red);
+  font-size: 12px;
+}
+.email-error{
+  position: absolute;
+  left: 10px;
+  bottom: -2px;
+  color: var( --error-red);
+  font-size: 12px;
+}
