@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import AddCandidate from '../../components/AddCandidate';
+import AddCandidate from '../../components/candidates/AddCandidate';
+import CandidatesFilters from '../../components/candidates/CandidatesFilters';
+import CandidateTable from '../../components/candidates/CandidateTable';
 
 function Candidates() {
   const [openMenu, setOpemMenu] = useState(false);
@@ -9,7 +11,7 @@ function Candidates() {
   };
   return (
     <div className='co-main-container'>
-      <div className='co-title-container'>
+      <div className='co-container'>
         <h2>Candidate Overview</h2>
         <div>
           <button
@@ -19,6 +21,8 @@ function Candidates() {
           </button>
         </div>
       </div>
+      <CandidatesFilters />
+      <CandidateTable />
       <AddCandidate
         open={openMenu}
         close={handleClose}

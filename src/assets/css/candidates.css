@@ -2,15 +2,38 @@
   width: 100%;
   margin-top: 80px;
   display: flex;
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 }
-.co-title-container {
+.co-container {
   width: 100%;
   background: var(--app-background);
-  padding: 0px 16px;
+  padding: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
- 
+  border-radius: 4px;
+}
+.co-container h2 {
+  margin: 0%;
+  font-size: 24px;
+}
+.co-candidate-container {
+  width: 100%;
+  background: var(--app-background);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+.co-tab-container {
+  width: 100%;
+}
+.co-table-container {
+  width: 100%;
 }

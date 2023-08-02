@@ -50,6 +50,7 @@ body {
 }
 *{
    box-sizing: border-box !important;
+   box-shadow: none;
 }
 .basic-input {
   height: 40px;

@@ -20,7 +20,7 @@ function Login() {
   };
 
   const handleLogin = () => {
-    if (!loginData.email || !checkIsValid(loginData.email, formats.email)) {
+    if (!checkIsValid(loginData?.email, formats.email)) {
       let err = {
         email: '',
         password: '',
@@ -28,7 +28,7 @@ function Login() {
       if (!loginData.email) {
         err.email = 'Enter valid email';
       }
-      if (loginData.password.length < 4) {
+      if (loginData.password.length <= 4) {
         err.password = 'Enter valid password';
       }
       setError(err);
@@ -67,7 +67,7 @@ function Login() {
               className='basic-input '
               placeholder='Password'
               onChange={handleInputs}
-              name="password"
+              name='password'
             />
             <div className='login-error-container'>
               {error?.password && (
