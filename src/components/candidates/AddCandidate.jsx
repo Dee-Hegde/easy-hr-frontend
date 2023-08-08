@@ -1,6 +1,7 @@
 import React from 'react';
 import DrawerWrappers from '../customfiles/drawers/DrawerWrappers';
 import { CloseCircleOutlined } from '@ant-design/icons';
+import InputContainers from './InputContainers';
 
 function AddCandidate({ open, close }) {
   return (
@@ -9,7 +10,9 @@ function AddCandidate({ open, close }) {
       onClose={close}
       placement={'right'}
       width={900}
-      title={'Add Candidate'}></DrawerWrappers>
+      title={'Add Candidate'}>
+      <InputContainers />
+    </DrawerWrappers>
   );
 }
 

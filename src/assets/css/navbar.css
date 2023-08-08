@@ -7,8 +7,9 @@
   align-items: center;
   background-color: var(--app-background);
   position: fixed;
-  top: 1px;
+  top: 0px;
   left: 0px;
+  z-index: 999;
 }
 .nav-left-side-section {
   width: 40%;

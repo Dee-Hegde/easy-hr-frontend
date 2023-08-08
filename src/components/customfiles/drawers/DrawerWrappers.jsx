@@ -15,7 +15,7 @@ function DrawerWrappers(props) {
       open={props.open}>
       {props?.title && (
         <div className='nd-title-container'>
-          <h3>Add Candidate</h3>
+          <h3>{props.title}</h3>
           <CloseCircleOutlined
             onClick={props.onClose}
             className='drawer-close'

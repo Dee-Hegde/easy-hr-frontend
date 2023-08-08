@@ -5,27 +5,23 @@ function CandidatesFilters() {
   return (
     <div className='co-container'>
       <div>
-        <p>name</p>
+        <p>Job Openings</p>
         <Input placeholder='name' />
       </div>
       <div>
-        <p>name</p>
+        <p>Notice Period</p>
         <Input placeholder='name' />
       </div>
       <div>
-        <p>name</p>
+        <p>Source</p>
         <Input placeholder='name' />
       </div>
       <div>
-        <p>name</p>
+        <p>Added by</p>
         <Input placeholder='name' />
       </div>
       <div>
-        <p>name</p>
-        <Input placeholder='name' />
-      </div>
-      <div>
-        <p>name</p>
+        <p>Start & End Date</p>
         <Input placeholder='name' />
       </div>
     </div>

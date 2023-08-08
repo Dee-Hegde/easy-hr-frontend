@@ -37,3 +37,73 @@
 .co-table-container {
   width: 100%;
 }
+
+/* Input Container */
+.co-main-ip-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+.co-sub-ip-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.co-input-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 8px 16px;
+}
+.co-remark-container {
+  width: 1000%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 8px 16px;
+}
+.co-select {
+  width: 100%;
+  height: 40px;
+}
+.co-select .ant-select-selector {
+  border-radius: 4px !important;
+}
+.co-input-lable {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.co-input-upload {
+  width: 100%;
+}
+.co-input-upload button {
+  width: 100%;
+  height: 42px;
+}
+.co-input-upload > div {
+  width: 100%;
+}
+.ant-upload-list-item .ant-upload-icon .anticon > svg {
+  display: none;
+}
+.co-submit-btn-container {
+  width: 100%;
+  padding: 16px;
+  position: sticky;
+  bottom: 0px;
+  background: var(--app-background);
+  z-index: 99;
+}
