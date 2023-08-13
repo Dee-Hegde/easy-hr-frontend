@@ -1,8 +1,16 @@
+import {
+  ArrowRightOutlined,
+  EditOutlined,
+  FilePdfOutlined,
+  RightOutlined,
+} from '@ant-design/icons';
 import { Table, Tabs, Tag } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
+import AddCandidate from './AddCandidate';
 
 function CandidateTable() {
-const interviewStatus = [
+  const [visibleStatus, setVisibleStatus]=useState(false)
+  const interviewStatus = [
     {
       label: 'Yet to Contact - 13',
       key: 0,
@@ -44,126 +52,211 @@ const interviewStatus = [
       key: 9,
     },
   ];
-const columns = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    render: (text) => <a>{text}</a>,
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
-  {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-    render: (_, { tags }) => (
-      <>
-        {tags.map((tag) => {
-          let color = tag.length > 5 ? 'geekblue' : 'green';
-          if (tag === 'loser') {
-            color = 'volcano';
-          }
-          return (
-            <Tag
-              color={color}
-              key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </>
-    ),
-  },
-];
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
-  const onChange = (key) => {
+  const columns = [
+    {
+      title: 'Id',
+      dataIndex: 'id',
+      key: 'name',
+      align: 'center',
+      width: 100,
+      render: (text) => <p>{text}</p>,
+    },
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      key: 'name',
+      align: 'center',
+      width: 200,
+    },
+    {
+      title: 'Email',
+      dataIndex: 'email',
+      key: 'email',
+      align: 'center',
+      width: 150,
+      ellipsis: true,
+      render: () => <p>{'deepakhegde@sketchbrahma.com'}</p>,
+    },
+    {
+      title: 'Mobile',
+      dataIndex: 'Mobile',
+      key: 'Mobile',
+      align: 'center',
+      width: 100,
+      render: () => <p>{'7892904634'}</p>,
+    },
+    {
+      title: 'Rel Exp',
+      dataIndex: 'Rel Exp',
+      key: 'MoRel Expbile',
+      align: 'center',
+      width: 80,
+    },
+    {
+      title: 'N P',
+      dataIndex: 'Notice Period',
+      key: 'Notice Period',
+      align: 'center',
+      width: 80,
+    },
+    {
+      title: 'CTC',
+      dataIndex: 'CTC',
+      key: 'CTC',
+      align: 'center',
+      width: 80,
+    },
+    {
+      title: 'Added By',
+      dataIndex: 'Added By',
+      key: 'Added By',
+      align: 'center',
+      width: 150,
+    },
+    {
+      title: 'Resume',
+      dataIndex: 'Resume',
+      key: 'Resume',
+      render: (data) => (
+        <p onClick={()=>onStatusChange(data)}>
+          <FilePdfOutlined style={{ fontSize: '20px' }} />
+        </p>
+      ),
+      align: 'center',
+      width: 80,
+    },
+    {
+      title: 'Edit',
+      dataIndex: 'Edit',
+      key: 'Edit',
+      render: () => (
+        <p onClick={onStatusChange}>
+          <EditOutlined style={{ fontSize: '20px' }} />
+        </p>
+      ),
+      align: 'center',
+      width: 50,
+    },
+    {
+      title: '',
+      dataIndex: 'Action',
+      key: 'Action',
+      render: () => (
+        <p onClick={onStatusChange}>
+          {/* <ArrowRightOutlined /> */}
+          <RightOutlined style={{ fontSize: '16px' }} />
+        </p>
+      ),
+      align: 'center',
+      width: 50,
+    },
+    // {
+    //   title: '',
+    //   key: 'tags',
+    //   dataIndex: 'tags',
+    //   render: (_, { tags }) => (
+    //     <>
+    //       {tags.map((tag) => {
+    //         let color = tag.length > 5 ? 'geekblue' : 'green';
+    //         if (tag === 'loser') {
+    //           color = 'volcano';
+    //         }
+    //         return (
+    //           <Tag
+    //             color={color}
+    //             key={tag}>
+    //             {tag.toUpperCase()}
+    //           </Tag>
+    //         );
+    //       })}
+    //     </>
+    //   ),
+    // },
+  ];
+  const data = [
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+      tags: ['nice', 'developer'],
+    },
+    {
+      key: '2',
+      name: 'Jim Green',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+      tags: ['loser'],
+    },
+    {
+      key: '3',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '4',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '5',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '6',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '7',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '8',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '9',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+    {
+      key: '10',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+  ];
+  const onTabChange = (key) => {
     console.log(key);
+  };
+  const onStatusChange = (key) => {
+    setVisibleStatus(!visibleStatus)
+    console.log(key)
   };
   return (
     <div className='co-candidate-container'>
       <div className='co-tab-container'>
         <Tabs
-          onChange={onChange}
+          onChange={onTabChange}
           type='card'
           value={0}
           items={interviewStatus}
@@ -175,6 +268,10 @@ const data = [
           dataSource={data}
         />
       </div>
+      <AddCandidate
+        open={visibleStatus}
+        close={onStatusChange}
+      />
     </div>
   );
 }

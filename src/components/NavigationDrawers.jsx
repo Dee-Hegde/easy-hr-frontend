@@ -39,6 +39,11 @@ function NavigationDrawers({ open, close }) {
       path: '/events',
       icon: <CalendarOutlined className='menuIcons' />,
     },
+    {
+      title: 'Google Calendar',
+      path: '/calendar',
+      icon: <CalendarOutlined className='menuIcons' />,
+    },
   ];
   return (
     <DrawerWrappers
@@ -60,7 +65,7 @@ function NavigationDrawers({ open, close }) {
       <div className='nav-drawer-body'>
         <ul>
           {appNavigations.map((item, index) => (
-            <li>
+            <li key={index}>
               <Link to={item.path}>
                 <p>
                   <span className='menuIcons'>{item.icon}</span>

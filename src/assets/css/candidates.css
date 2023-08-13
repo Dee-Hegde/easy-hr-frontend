@@ -16,6 +16,57 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 4px;
+  gap: 16px;
+}
+.co-search-container{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+.co-filters {
+  flex-basis: 20%;
+}
+.co-filters-title {
+  flex-basis: 100%;
+  margin: 0;
+  padding-bottom: 4px;
+}
+.co-search-wrapper{
+  width: 60%;
+}
+.co-add-candidate-btn{
+  max-width: 150px;
+}
+.ant-input-affix-wrapper {
+  height: 40px !important;
+}
+/* Table TD */
+.ant-table-wrapper .ant-table-tbody >tr >td {
+    position: relative;
+    padding: 1px 1px !important;
+    overflow-wrap: break-word;
+}
+.ant-picker {
+  width: 100% !important;
+  height: 40px !important;
+}
+.ant-select-selector {
+  padding: 3px 11px !important;
+}
+.ant-input-search-button {
+  height: 40px !important;
+}
+.co-filters div {
+  width: 100% !important;
+  height: 40px !important;
+}
+.ant-picker-range .ant-picker-range-separator {
+  align-items: center;
+  padding: 10px 8px;
+  line-height: 1;
 }
 .co-container h2 {
   margin: 0%;

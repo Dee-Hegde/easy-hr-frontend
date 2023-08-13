@@ -186,7 +186,7 @@ function InputContainers() {
             name='file'
             progress={{ strokeWidth: '0', showInfo: false }}
             listType={'text'}
-            multiple={'false'}
+            multiple={false}
             maxCount={1}
             showUploadList={true}>
             <Button icon={<UploadOutlined />}>Click to Upload</Button>

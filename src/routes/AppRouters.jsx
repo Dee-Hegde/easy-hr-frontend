@@ -6,6 +6,7 @@ import Dashboard from '../containers/dashboard/Dashboard';
 import AuthRouters from './AuthRouters';
 import NotFound from '../components/NotFound';
 import Candidates from '../containers/candidates/Candidates';
+import Calendar from '../containers/calendar/GoogleCalendar';
 
 function AppRouters() {
   return (
@@ -31,15 +32,21 @@ function AppRouters() {
           path='/candidates'
           element={
             <AuthRouters>
-              <Candidates/>
+              <Candidates />
+            </AuthRouters>
+          }
+        />
+        <Route
+          path='/calendar'
+          element={
+            <AuthRouters>
+              <Calendar />
             </AuthRouters>
           }
         />
         <Route
           path={'*'}
-          element={
-            <NotFound/>
-          }
+          element={<NotFound />}
         />
       </Routes>
     </>
