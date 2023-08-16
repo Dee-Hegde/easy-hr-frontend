@@ -9,14 +9,14 @@ import React, { useState } from 'react';
 import AddCandidate from './AddCandidate';
 
 function CandidateTable() {
-  const [visibleStatus, setVisibleStatus]=useState(false)
+  const [visibleStatus, setVisibleStatus] = useState(false);
   const interviewStatus = [
     {
-      label: 'Yet to Contact - 13',
+      label: 'Yet to Contact - (13)',
       key: 0,
     },
     {
-      label: 'Tele Verification',
+      label: 'Tele Verification - (12)',
       key: 1,
     },
     {
@@ -67,13 +67,14 @@ function CandidateTable() {
       key: 'name',
       align: 'center',
       width: 200,
+      ellipsis: true,
     },
     {
       title: 'Email',
       dataIndex: 'email',
       key: 'email',
       align: 'center',
-      width: 150,
+      width: 180,
       ellipsis: true,
       render: () => <p>{'deepakhegde@sketchbrahma.com'}</p>,
     },
@@ -82,7 +83,7 @@ function CandidateTable() {
       dataIndex: 'Mobile',
       key: 'Mobile',
       align: 'center',
-      width: 100,
+      width: 150,
       render: () => <p>{'7892904634'}</p>,
     },
     {
@@ -90,7 +91,7 @@ function CandidateTable() {
       dataIndex: 'Rel Exp',
       key: 'MoRel Expbile',
       align: 'center',
-      width: 80,
+      width: 100,
     },
     {
       title: 'N P',
@@ -104,7 +105,7 @@ function CandidateTable() {
       dataIndex: 'CTC',
       key: 'CTC',
       align: 'center',
-      width: 80,
+      width: 100,
     },
     {
       title: 'Added By',
@@ -115,15 +116,15 @@ function CandidateTable() {
     },
     {
       title: 'Resume',
-      dataIndex: 'Resume',
+      dataIndex: 'age',
       key: 'Resume',
       render: (data) => (
-        <p onClick={()=>onStatusChange(data)}>
+        <p onClick={() => onStatusChange(data)}>
           <FilePdfOutlined style={{ fontSize: '20px' }} />
         </p>
       ),
       align: 'center',
-      width: 80,
+      width: 100,
     },
     {
       title: 'Edit',
@@ -135,7 +136,7 @@ function CandidateTable() {
         </p>
       ),
       align: 'center',
-      width: 50,
+      width: 80,
     },
     {
       title: '',
@@ -148,7 +149,7 @@ function CandidateTable() {
         </p>
       ),
       align: 'center',
-      width: 50,
+      width: 80,
     },
     // {
     //   title: '',
@@ -249,8 +250,8 @@ function CandidateTable() {
     console.log(key);
   };
   const onStatusChange = (key) => {
-    setVisibleStatus(!visibleStatus)
-    console.log(key)
+    setVisibleStatus(!visibleStatus);
+    console.log(key);
   };
   return (
     <div className='co-candidate-container'>
@@ -263,10 +264,12 @@ function CandidateTable() {
         />
       </div>
       <div className='co-table-container'>
-        <Table
-          columns={columns}
-          dataSource={data}
-        />
+        <div className='co-tab-container'>
+          <Table
+            columns={columns}
+            dataSource={data}
+          />
+        </div>
       </div>
       <AddCandidate
         open={visibleStatus}

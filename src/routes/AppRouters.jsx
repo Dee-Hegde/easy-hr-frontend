@@ -4,9 +4,10 @@ import Login from '../containers/login/Login';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Dashboard from '../containers/dashboard/Dashboard';
 import AuthRouters from './AuthRouters';
-import NotFound from '../components/NotFound';
+import NotFound from '../components/notFound/NotFound';
 import Candidates from '../containers/candidates/Candidates';
 import Calendar from '../containers/calendar/GoogleCalendar';
+import Employees from '../containers/employees/Employees';
 
 function AppRouters() {
   return (
@@ -41,6 +42,14 @@ function AppRouters() {
           element={
             <AuthRouters>
               <Calendar />
+            </AuthRouters>
+          }
+        />
+        <Route
+          path='/employees'
+          element={
+            <AuthRouters>
+              <Employees />
             </AuthRouters>
           }
         />

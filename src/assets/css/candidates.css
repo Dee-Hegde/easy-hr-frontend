@@ -87,6 +87,7 @@
 }
 .co-table-container {
   width: 100%;
+  overflow: scroll;
 }
 
 /* Input Container */

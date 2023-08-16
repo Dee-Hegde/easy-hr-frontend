@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/images/logo.svg';
+import logo from '../../assets/images/logo.svg';
 import {
   CalendarOutlined,
   CaretRightOutlined,
@@ -9,10 +9,11 @@ import {
   UserOutlined,
   UsergroupAddOutlined,
 } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
-import DrawerWrappers from './customfiles/drawers/DrawerWrappers';
+import DrawerWrappers from '../customfiles/drawers/DrawerWrappers';
+import { useNavigate } from 'react-router-dom';
 
 function NavigationDrawers({ open, close }) {
+  const navigate = useNavigate();
   const appNavigations = [
     {
       title: 'Dashboard',
@@ -45,13 +46,17 @@ function NavigationDrawers({ open, close }) {
       icon: <CalendarOutlined className='menuIcons' />,
     },
   ];
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    close();
+  };
   return (
     <DrawerWrappers
       open={open}
       close={close}
       placement={'left'}
-      width={300}
-      >
+      width={300}>
       <div className='nd-title-container'>
         <img
           src={logo}
@@ -65,14 +70,14 @@ function NavigationDrawers({ open, close }) {
       <div className='nav-drawer-body'>
         <ul>
           {appNavigations.map((item, index) => (
-            <li key={index}>
-              <Link to={item.path}>
-                <p>
-                  <span className='menuIcons'>{item.icon}</span>
-                  <span>{item.title}</span>
-                </p>
-                <CaretRightOutlined />
-              </Link>
+            <li
+              key={index}
+              onClick={() => handleNavigation(item?.path)}>
+              <p>
+                <span className='menuIcons'>{item.icon}</span>
+                <span>{item.title}</span>
+              </p>
+              <CaretRightOutlined />
             </li>
           ))}
         </ul>
