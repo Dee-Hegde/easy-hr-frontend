@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import AddCandidate from '../../components/candidates/AddCandidate';
+import Search from 'antd/es/transfer/search';
+import React, { useState } from 'react'
 import CandidatesFilters from '../../components/candidates/CandidatesFilters';
 import CandidateTable from '../../components/candidates/CandidateTable';
+import AddCandidate from '../../components/candidates/AddCandidate';
 
-import { Input } from 'antd';
-const { Search } = Input;
-
-function Candidates() {
+function Employees() {
   const [openMenu, setOpemMenu] = useState(false);
 
   const handleClose = () => {
@@ -15,7 +13,7 @@ function Candidates() {
   return (
     <div className='co-main-container'>
       <div className='co-container'>
-        <h2>Candidate Overview</h2>
+        <h2>Employees Overview</h2>
         <div className='co-search-container'>
           <div className='co-search-wrapper'>
             <Search
@@ -26,7 +24,7 @@ function Candidates() {
           <button
             onClick={handleClose}
             className='primary-button co-add-candidate-btn'>
-            Add Candidates
+            Add Employee
           </button>
         </div>
       </div>
@@ -40,4 +38,4 @@ function Candidates() {
   );
 }
 
-export default Candidates;
+export default Employees

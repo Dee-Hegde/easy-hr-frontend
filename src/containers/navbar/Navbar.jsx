@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from '../../assets/images/logo.svg';
 import { CaretDownOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
-import NavigationDrawers from '../../components/drawers/NavigationDrawers';
+import NavigationDrawers from '../../components/navigation/NavigationDrawers';
 
 
 function Navbar() {
