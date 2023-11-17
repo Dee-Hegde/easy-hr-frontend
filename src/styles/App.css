@@ -1,0 +1,96 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@import url("react-toastify/dist/ReactToastify.css");
+/* antd Css import */
+
+/* Light mode color variables */
+:root {
+  --primary-background: #f9f9fa;
+  --app-background: #ffffff;
+
+  --error-red: #ea3b42;
+  --warning: #c64b00;
+
+  --text-color-1: #4e4e4e;
+  --text-color-2: #182470;
+  --text-color-3: #191919;
+  --text-color-4: #ffffff;
+
+  --border-color-1: #e8e8e4;
+  --border-color-2: #182470;
+
+  --primary-dependency: #31a93e;
+  --secondary-dependency: #bfe4c3;
+  --third-dependency: #e9f6ea;
+
+  --avatar-color: #d9dbf3;
+  --primary-btn-hover: #6136c6;
+  --primary-btn-background: #4317a9;
+  --secondary-btn-background: #ffffff;
+  --secondary-btn-hover: #edebf0;
+  --disabled-btn-background: linear-gradient(
+    92.42deg,
+    rgba(24, 27, 78, 0.5) -20.53%,
+    rgba(155, 53, 129, 0.5) 18.39%,
+    rgba(232, 70, 128, 0.5) 54.73%,
+    rgba(236, 97, 78, 0.5) 97.97%
+  );
+}
+
+html,
+body {
+  max-width: 100vw !important;
+  font-family: 'Nunito', sans-serif !important;
+  background: var(--primary-background);
+  position: relative;
+}
+*{
+   box-sizing: border-box !important;
+   box-shadow: none;
+}
+.basic-input {
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid var(--border-color-1);
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  height: 40px !important;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid var(--border-color-1);
+  font-size: 16px;
+  cursor: pointer;
+}
+.primary-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--border-color-1);
+  background: var(--primary-btn-background);
+  color: var(--text-color-4);
+}
+.secondary-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--border-color-2);
+  background: var(--secondary-btn-background);
+  color: var(--text-color-2);
+}
+
+.required-text{
+  color: var(--error-red);
+}
+
+/* ant Drawer body */
+.ant-drawer .ant-drawer-body {
+  padding: 0px !important;
+}

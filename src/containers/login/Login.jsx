@@ -7,10 +7,15 @@ import { useGoogleLogin } from '@react-oauth/google';
 import { Link, useNavigate } from 'react-router-dom';
 import { checkIsValid } from '../../utils/commonFunctions';
 import { formats } from '../../utils/constants';
+import axios from 'axios';
+import { errorAlert, successAlert } from '../../utils/toaster-helper';
 
 function Login() {
   const navigate = useNavigate();
-  const [loginData, setLoginData] = useState({ email: '', password: '' });
+  const [loginData, setLoginData] = useState({
+    email: 'cposene@meetup.com',
+    password: 'gK3<3mq&',
+  });
   const [error, setError] = useState({ email: '', password: '' });
 
   const handleInputs = (e) => {
@@ -19,7 +24,7 @@ function Login() {
     setError({ ...error, [name]: '' });
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!checkIsValid(loginData?.email, formats.email)) {
       let err = {
         email: '',
@@ -33,7 +38,20 @@ function Login() {
       }
       setError(err);
     } else {
-      navigate('/dashboard');
+      try {
+        const response = await axios.post('http://localhost:8000/api/auth/login', {
+          email: loginData.email,
+          password: loginData.password,
+        });
+
+        if (response.status === 200) {
+          successAlert(response.message);
+          navigate('/candidates');
+        }
+      } catch (error) {
+        console.log(error);
+        errorAlert(error.message);
+      }
     }
   };
   const googleLogin = useGoogleLogin({
@@ -56,6 +74,7 @@ function Login() {
               placeholder='Email'
               onChange={handleInputs}
               name='email'
+              value={loginData.email}
             />
             {error?.email && (
               <span className='email-error'>{error?.email}</span>
@@ -68,6 +87,7 @@ function Login() {
               placeholder='Password'
               onChange={handleInputs}
               name='password'
+              value={loginData.password}
             />
             <div className='login-error-container'>
               {error?.password && (

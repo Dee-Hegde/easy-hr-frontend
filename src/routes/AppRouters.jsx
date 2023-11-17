@@ -16,7 +16,7 @@ function AppRouters() {
         <Route
           path='/'
           element={
-            <GoogleOAuthProvider clientId='934254784491-2nesacf8r403tr9hdbfpuln9g303nq11.apps.googleusercontent.com'>
+            <GoogleOAuthProvider clientId='964161569232-pfdvohajova8p2h38tcrhbt0lc5a8dth.apps.googleusercontent.com'>
               <Login />
             </GoogleOAuthProvider>
           }

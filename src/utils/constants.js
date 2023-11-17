@@ -10,3 +10,131 @@ export const formats = {
   gstformat: /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/,
 };
 
+export const interviewedByArr = [
+  'Sketchbrahma Technologies',
+  'Lakshmi Narasimhan Kumar',
+  'Bharathi B',
+  'Sahana Patil',
+  'Shivakumar Swain',
+];
+
+export const candidateStatusCustom = [
+  { name: 'Candidates', api: 'Candidates', api_receiver: 'Candidates' },
+  { name: 'Screening', api: 'Screening', api_receiver: 'screening' },
+  { name: 'Round 1', api: 'Round 1', api_receiver: 'Round_1' },
+  {
+    name: 'Validation',
+    api: 'Task Verification',
+    api_receiver: 'taskVerification',
+  },
+  { name: 'Round 2', api: 'Round 2', api_receiver: 'Round_2' },
+  { name: 'HR Round', api: 'HR Round', api_receiver: 'hrRound' },
+  { name: 'Offered', api: 'Offered', api_receiver: 'offered' },
+  { name: 'Accepted', api: 'Offer Accepted', api_receiver: 'offerAccepted' },
+  { name: 'Declined', api: 'Offer Declined', api_receiver: 'OfferDeclined' },
+  { name: 'Joined', api: 'Joined', api_receiver: 'joined' },
+  { name: 'Rejected', api: 'Rejected', api_receiver: 'rejected' },
+];
+export const candidateSkillSetsArr = [
+  'UI UX Design',
+  'Lead Generation',
+  'Motion Graphics Designer',
+  'React Js',
+  'Angular Js',
+  'Vue Js',
+  'React Native',
+  'Flutter',
+  'Node Js',
+  'UI Development',
+  'GO Lang',
+  'Python',
+  'Ruby on Rails',
+  'Software Tester',
+  'Devops',
+  'IT Recruiter',
+];
+export const candidateStatusArr = [
+  'Candidates',
+  'Screening',
+  'Design Task Given',
+  'Design Technical Call',
+  'Task Verification',
+  'Round 1',
+  'Round 2',
+  'DS Round & API',
+  'Technical Interview',
+  'HR Round',
+  'Offered',
+  'Offer Accepted',
+  'Offer Declined',
+  'Joined',
+  'Rejected',
+];
+
+export const NoticePeriodArr = [
+  '15 Days',
+  '30 Days',
+  '45 Days',
+  '60 Days',
+  '90 Days',
+  'Immediate joiner',
+];
+export const SourceArr = [
+  'Naukri',
+  'Linkedin',
+  'Monster',
+  'Indeed',
+  'Hirect',
+  'Angelist',
+  'PyjamaHr',
+  'Referral',
+  'Consultancy',
+  'Others',
+];
+export const extraSkills = [
+  'UI UX Design',
+  'Lead Generation',
+  'Motion Graphics Designer',
+  'React Js',
+  'Angular Js',
+  'Vue Js',
+  'React Native',
+  'Flutter',
+  'Node Js',
+  'UI Development',
+  'GO Lang',
+  'Python',
+  'Ruby on Rails',
+  'Software Tester',
+  'JavaScript',
+  'JQuerry',
+  'HTML/CSS',
+  'Flex Box',
+  'Redux',
+  'Java',
+  'Mongo DB',
+  'Express',
+  'Adobe Illustrator',
+  'After Effects',
+  'Devops',
+  'Material UI',
+  'IT Recruiter',
+];
+
+export const adminPanelData = [
+  {
+    name: 'bala',
+    email: 'bala@sketchbrahma.com',
+    role: 'admin',
+  },
+  {
+    name: 'syam',
+    email: 'syam@sketchbrahma.com',
+    role: 'user',
+  },
+  {
+    name: 'Mohan',
+    email: 'mohan@sketchbrahma.com',
+    role: 'user',
+  },
+];
