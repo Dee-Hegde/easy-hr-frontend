@@ -1,6 +1,6 @@
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
-@import url("react-toastify/dist/ReactToastify.css");
+@import url('react-toastify/dist/ReactToastify.css');
 /* antd Css import */
 
 /* Light mode color variables */
@@ -44,9 +44,9 @@ body {
   background: var(--primary-background);
   position: relative;
 }
-*{
-   box-sizing: border-box !important;
-   box-shadow: none;
+* {
+  box-sizing: border-box !important;
+  box-shadow: none;
 }
 .basic-input {
   height: 40px;
@@ -86,7 +86,7 @@ button {
   color: var(--text-color-2);
 }
 
-.required-text{
+.required-text {
   color: var(--error-red);
 }
 

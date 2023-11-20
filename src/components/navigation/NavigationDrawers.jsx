@@ -11,6 +11,7 @@ import {
 } from '@ant-design/icons';
 import DrawerWrappers from '../customfiles/drawers/DrawerWrappers';
 import { useNavigate } from 'react-router-dom';
+import "./navbarDrawer.scss"
 
 function NavigationDrawers({ open, close }) {
   const navigate = useNavigate();

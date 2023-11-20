@@ -1,3 +1,5 @@
+import { clearStorage, getLocalStorage } from './storage-helper';
+import { jwtDecode } from 'jwt-decode';
 
 export const checkIsValid = (value = '', format) => {
   return format.test(value);
@@ -34,4 +36,24 @@ export const getNameInitials = (name = '') => {
   }
 
   return initials.toUpperCase();
+};
+
+export const checkAuthentication = async () => {
+  const token = await getLocalStorage('easytokens');
+  if (token) {
+    const decoded = jwtDecode(token);
+    const expDate = decoded?.exp * 1000;
+
+    if (expDate <= new Date().getTime()) {
+      // Token is expired
+      clearStorage();
+      return false;
+    } else {
+      // Token is still valid
+      return true;
+    }
+  }
+
+  // No token found
+  return false;
 };

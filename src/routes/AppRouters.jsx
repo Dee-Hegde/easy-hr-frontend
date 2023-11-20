@@ -1,13 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Login from '../containers/login/Login';
+import Login from '../containers/Login/Login';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import Dashboard from '../containers/dashboard/Dashboard';
 import AuthRouters from './AuthRouters';
 import NotFound from '../components/notFound/NotFound';
-import Candidates from '../containers/candidates/Candidates';
-import Calendar from '../containers/calendar/GoogleCalendar';
-import Employees from '../containers/employees/Employees';
+import Dashboard from '../containers/Dashboard';
+import Candidates from '../containers/Candidates';
 
 function AppRouters() {
   return (
@@ -25,7 +23,7 @@ function AppRouters() {
           path='/dashboard'
           element={
             <AuthRouters>
-              <Dashboard />
+              <Dashboard/>
             </AuthRouters>
           }
         />
@@ -37,7 +35,7 @@ function AppRouters() {
             </AuthRouters>
           }
         />
-        <Route
+        {/* <Route
           path='/calendar'
           element={
             <AuthRouters>
@@ -52,7 +50,7 @@ function AppRouters() {
               <Employees />
             </AuthRouters>
           }
-        />
+        /> */}
         <Route
           path={'*'}
           element={<NotFound />}

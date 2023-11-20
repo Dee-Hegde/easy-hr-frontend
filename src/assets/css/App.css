@@ -5,8 +5,6 @@
 
 /* Css Files import */
 @import url('./Login.css');
-@import url('./navbar.css');
-@import url('./candidates.css');
 /* Light mode color variables */
 :root {
   --primary-background: #f9f9fa;

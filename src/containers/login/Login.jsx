@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
 import HROffice from '../../assets/images/login/HROffice.png';
 import logo from '../../assets/images/logo.svg';
-import googleLogo from '../../assets/images/login/googleLogo.svg';
+// import googleLogo from '../../assets/images/login/googleLogo.svg';
 import { Input } from 'antd';
-import { useGoogleLogin } from '@react-oauth/google';
+// import { useGoogleLogin } from '@react-oauth/google';
 import { Link, useNavigate } from 'react-router-dom';
-import { checkIsValid } from '../../utils/commonFunctions';
+import { checkAuthentication, checkIsValid } from '../../utils/commonFunctions';
 import { formats } from '../../utils/constants';
 import axios from 'axios';
 import { errorAlert, successAlert } from '../../utils/toaster-helper';
+import { setLocalStorage } from '../../utils/storage-helper';
 
 function Login() {
   const navigate = useNavigate();
@@ -39,13 +41,17 @@ function Login() {
       setError(err);
     } else {
       try {
-        const response = await axios.post('http://localhost:8000/api/auth/login', {
-          email: loginData.email,
-          password: loginData.password,
-        });
+        const response = await axios.post(
+          'http://localhost:8000/api/auth/login',
+          {
+            email: loginData.email,
+            password: loginData.password,
+          }
+        );
 
         if (response.status === 200) {
-          successAlert(response.message);
+          successAlert(response?.data?.message);
+          await setLocalStorage('easytokens', response?.data?.data?.token);
           navigate('/candidates');
         }
       } catch (error) {
@@ -54,10 +60,15 @@ function Login() {
       }
     }
   };
-  const googleLogin = useGoogleLogin({
-    onSuccess: (tokenResponse) => navigate('/dashboard'),
-  });
+  // const googleLogin = useGoogleLogin({
+  //   onSuccess: (tokenResponse) => navigate('/dashboard'),
+  // });
 
+  useEffect(() => {
+    if (checkAuthentication()) {
+      navigate('/candidates');
+    }
+  }, []);
   return (
     <div className='login-main-container'>
       <div className='login-left-container'>
@@ -102,7 +113,7 @@ function Login() {
               className='primary-button '>
               Login
             </button>
-            <button
+            {/* <button
               onClick={googleLogin}
               className='secondary-button'>
               <img
@@ -110,7 +121,7 @@ function Login() {
                 alt=''
               />
               Google Login
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
