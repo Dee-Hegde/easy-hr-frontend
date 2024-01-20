@@ -1,0 +1,86 @@
+:root {
+  --primary-background: #f9f9fa;
+  --app-background: #ffffff;
+  --app-section-background: #ffff;
+
+  --error-red: #ea3b42;
+  --warning: #c64b00;
+
+  --text-color-1: #4e4e4e;
+  --text-color-2: #182470;
+  --text-color-3: #191919;
+  --text-color-4: #ffffff;
+
+  --border-color-1: #e8e8e4;
+  --border-color-2: #182470;
+
+  --primary-dependency: #31a93e;
+  --secondary-dependency: #bfe4c3;
+  --third-dependency: #e9f6ea;
+
+  --avatar-color: #d9dbf3;
+  --primary-btn-hover: #6136c6;
+  --primary-btn-background: #4317a9;
+  --secondary-btn-background: #ffffff;
+  --secondary-btn-hover: #edebf0;
+  --disabled-btn-background: linear-gradient(
+    92.42deg,
+    rgba(24, 27, 78, 0.5) -20.53%,
+    rgba(155, 53, 129, 0.5) 18.39%,
+    rgba(232, 70, 128, 0.5) 54.73%,
+    rgba(236, 97, 78, 0.5) 97.97%
+  );
+}
+.dark {
+  --primary-background: #030408;
+  --app-background: #030408;
+  --app-section-background: #2b3348;
+
+  --error-red: #ea3b42;
+  --warning: #c64b00;
+
+  --text-color-1: #fff;
+  --text-color-2: #fcfcfc;
+  --text-color-3: #ffff;
+  --text-color-4: #ffffff;
+
+  --border-color-1: #e8e8e4;
+  --border-color-2: #182470;
+
+  --primary-dependency: #31a93e;
+  --secondary-dependency: #bfe4c3;
+  --third-dependency: #e9f6ea;
+
+  --avatar-color: #d9dbf3;
+  --primary-btn-hover: #36c650;
+  --primary-btn-background: #17a91e;
+  --secondary-btn-background: #ffffff;
+  --secondary-btn-hover: #ecf0eb;
+  --disabled-btn-background: linear-gradient(
+    92.42deg,
+    rgba(24, 27, 78, 0.5) -20.53%,
+    rgba(155, 53, 129, 0.5) 18.39%,
+    rgba(232, 70, 128, 0.5) 54.73%,
+    rgba(236, 97, 78, 0.5) 97.97%
+  );
+}
+
+@mixin semibold($font-size, $line-height) {
+  font-size: $font-size;
+  font-style: normal;
+  line-height: $line-height;
+  color: var(--text-color-1);
+}
+
+@mixin medium($font-size, $line-height) {
+  font-size: $font-size;
+  font-style: normal;
+  line-height: $line-height;
+  color: var(--text-color-1);
+}
+@mixin regular($font-size, $line-height) {
+  font-size: $font-size;
+  font-style: normal;
+  line-height: $line-height;
+  color: var(--text-color-1);
+}

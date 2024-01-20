@@ -1,43 +1,8 @@
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
 
-/* antd Css import */
-
-/* Css Files import */
 @import url('./Login.css');
-/* Light mode color variables */
-:root {
-  --primary-background: #f9f9fa;
-  --app-background: #ffffff;
-
-  --error-red: #ea3b42;
-  --warning: #c64b00;
-
-  --text-color-1: #4e4e4e;
-  --text-color-2: #182470;
-  --text-color-3: #191919;
-  --text-color-4: #ffffff;
-
-  --border-color-1: #e8e8e4;
-  --border-color-2: #182470;
-
-  --primary-dependency: #31a93e;
-  --secondary-dependency: #bfe4c3;
-  --third-dependency: #e9f6ea;
-
-  --avatar-color: #d9dbf3;
-  --primary-btn-hover: #6136c6;
-  --primary-btn-background: #4317a9;
-  --secondary-btn-background: #ffffff;
-  --secondary-btn-hover: #edebf0;
-  --disabled-btn-background: linear-gradient(
-    92.42deg,
-    rgba(24, 27, 78, 0.5) -20.53%,
-    rgba(155, 53, 129, 0.5) 18.39%,
-    rgba(232, 70, 128, 0.5) 54.73%,
-    rgba(236, 97, 78, 0.5) 97.97%
-  );
-}
+@import url('../../styles/variables.scss');
 
 html,
 body {
@@ -45,10 +10,12 @@ body {
   font-family: 'Nunito', sans-serif !important;
   background: var(--primary-background);
   position: relative;
+  margin: 0;
+  padding: 0;
 }
-*{
-   box-sizing: border-box !important;
-   box-shadow: none;
+* {
+  box-sizing: border-box !important;
+  box-shadow: none;
 }
 .basic-input {
   height: 40px;
@@ -58,7 +25,7 @@ body {
   font-size: 16px;
 }
 
-button {
+.primary-button {
   width: 100%;
   height: 40px !important;
   border-radius: 4px;
@@ -66,8 +33,6 @@ button {
   border: 1px solid var(--border-color-1);
   font-size: 16px;
   cursor: pointer;
-}
-.primary-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -78,6 +43,13 @@ button {
   color: var(--text-color-4);
 }
 .secondary-button {
+  width: 100%;
+  height: 40px !important;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid var(--border-color-1);
+  font-size: 16px;
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -88,11 +60,22 @@ button {
   color: var(--text-color-2);
 }
 
-.required-text{
+.required-text {
   color: var(--error-red);
 }
 
 /* ant Drawer body */
 .ant-drawer .ant-drawer-body {
+  padding: 0px !important;
+}
+
+/* ant popover */
+.ant-popover .ant-popover-arrow::after {
+  background: var(--app-background);
+}
+.ant-popover .ant-popover-inner {
+  width: fit-content !important;
+  height: fit-content !important;
+  margin: 0px !important;
   padding: 0px !important;
 }

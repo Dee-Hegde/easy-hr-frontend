@@ -1,9 +1,8 @@
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
 @import url('react-toastify/dist/ReactToastify.css');
-/* antd Css import */
 
-/* Light mode color variables */
+
 :root {
   --primary-background: #f9f9fa;
   --app-background: #ffffff;

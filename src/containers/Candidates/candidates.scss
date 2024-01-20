@@ -1,0 +1,72 @@
+@import '../../styles/variables.scss';
+.candidates-container {
+  width: 100%;
+  height: 100%;
+  background: var(--app-background);
+  color: var(--text-color-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding: 0px 32px;
+
+  .container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    h2 {
+      @include semibold(26px, 32px);
+      margin: 0px;
+    }
+  }
+  .main-filter-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    .filter-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+    }
+    .select-container {
+      width: 120px;
+      .ant-select-single {
+        width: 100%;
+      }
+      .ant-select-selector {
+        background-color: var(--app-background) !important;
+        color: var(--text-color-1);
+      }
+    }
+    .search-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  .main-table-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0px;
+    background: var(--app-background);
+    color: var(--text-color-1);
+    .ant-tabs {
+      width: 100% !important;
+      height: 100%;
+    }
+  }
+}

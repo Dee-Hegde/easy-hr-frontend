@@ -23,7 +23,7 @@ function AppRouters() {
           path='/dashboard'
           element={
             <AuthRouters>
-              <Dashboard/>
+              <Dashboard />
             </AuthRouters>
           }
         />

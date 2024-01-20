@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from '../../assets/images/logo.svg';
+import '../../assets/css/App.css';
 
 import {
   CaretDownOutlined,
@@ -7,7 +8,7 @@ import {
   MenuUnfoldOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Popover } from 'antd';
+import { Avatar, Button, Popover, Switch } from 'antd';
 import NavigationDrawers from '../../components/navigation/NavigationDrawers';
 import './navbar.scss';
 
@@ -17,9 +18,23 @@ function Navbar() {
   const handleDrawer = () => {
     setOpemMenu(!openMenu);
   };
+
+  const handleTheme = (e) => {
+    if (e) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  };
   const content = (
-    <div>
-      <Button>Logout</Button>
+    <div className='logout-popover '>
+      <div className='mode-container'>
+        <span>Mode:</span>
+        <Switch
+          onChange={handleTheme}
+        />
+      </div>
+      <Button className='primary-button'>Logout</Button>
     </div>
   );
   return (
