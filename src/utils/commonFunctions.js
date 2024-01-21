@@ -52,8 +52,8 @@ export const checkAuthentication = async () => {
       // Token is still valid
       return true;
     }
+  } else {
+    // No token found
+    return false;
   }
-
-  // No token found
-  return false;
 };

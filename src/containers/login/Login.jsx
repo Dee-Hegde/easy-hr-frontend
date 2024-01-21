@@ -64,11 +64,11 @@ function Login() {
   //   onSuccess: (tokenResponse) => navigate('/dashboard'),
   // });
 
-  useEffect(() => {
-    if (checkAuthentication()) {
-      navigate('/candidates');
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (checkAuthentication()) {
+  //     navigate('/candidates');
+  //   }
+  // }, []);
   return (
     <div className='login-main-container'>
       <div className='login-left-container'>
