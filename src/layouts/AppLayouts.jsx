@@ -3,7 +3,7 @@ import './layouts.scss';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { commonIcons } from '../assets/images/common';
 import { useSelector } from 'react-redux';
-import AppLoader from '../components/Loader/AppLoader';
+import AppLoader from '../components/CustomComponents/Loader/AppLoader';
 import { getLocalStorage } from '../utils/storage-helper';
 
 const AppLayouts = (props) => {
@@ -142,7 +142,8 @@ const AppLayouts = (props) => {
             />
           </div>
         </div>
-        <div className='content-section'>{props.children}</div>
+        <div className='content-section'>
+          {props.children}</div>
       </div>
     </div>
   );

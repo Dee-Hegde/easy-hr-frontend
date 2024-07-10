@@ -5,6 +5,7 @@ import Login from './containers/Login/Login';
 import SignUp from './containers/SignUp/SignUp';
 import Dashboard from './containers/Dashboard/Dashboard';
 import Candidates from './containers/Candidates/Candidates';
+import Users from './containers/Users/Users';
 
 function App() {
   const appRoutes = [
@@ -60,7 +61,7 @@ function App() {
       path: '/users',
       component: (
         <AppLayouts>
-          <Candidates />
+          <Users />
         </AppLayouts>
       ),
     },
