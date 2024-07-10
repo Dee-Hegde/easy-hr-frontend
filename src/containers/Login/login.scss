@@ -1,0 +1,66 @@
+@import '../../assets/styles/global.scss';
+.login-container {
+  width: 100%;
+  height: 100vh;
+  @include flexbox();
+  background: #fff;
+  .vector-container {
+    width: 40%;
+    height: 100%;
+    @include flexbox(column, center, center);
+    .vector {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .credentials-container {
+    width: 55%;
+    @include flexbox($justify: flex-end);
+    .credentials-wrapper {
+      width: 100%;
+      height: fit-content;
+      max-width: 450px;
+      margin-right: 64px;
+      background: var(--primary-background-2);
+      border-radius: 6px;
+      @include flexbox($direction: column, $gap: 24px);
+      padding: 24px;
+      .form-wrapper {
+        width: 100%;
+        height: fit-content;
+        @include flexbox($direction: column, $gap: 20px);
+        .input-container {
+          width: 100%;
+          height: fit-content;
+        }
+      }
+      .title {
+        @include fontStyles($size: 32px, $weight: 600);
+      }
+      .logo {
+        width: 150px;
+      }
+      .button-container {
+        width: 100%;
+        height: fit-content;
+        button {
+          height: 40px;
+        }
+        @include flexbox($direction: column, $gap: 8px);
+        .signup-link-wrapper {
+          width: 100%;
+          text-align: left;
+          @include fontStyles($size: 14px, $weight: 400);
+          a {
+            @include fontStyles($size: 14px, $weight: 500);
+            color: var(--primary-button-bg);
+            &:hover {
+              color: var(--primary-button-hover-bg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
