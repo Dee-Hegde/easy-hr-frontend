@@ -1,0 +1,22 @@
+@import '../../assets/styles/global.scss';
+.user-section-container {
+  width: 100%;
+  height: 100%;
+  @include flexbox(
+    $direction: column,
+    $justify: flex-start,
+    $align: flex-start,
+    $gap: 24px
+  );
+  .filter-container {
+    width: 100%;
+    height: 36px;
+    @include flexbox($justify: flex-end, $align: flex-end, $gap: 8px);
+    .seachbox {
+      max-width: 350px;
+    }
+    .add-user {
+      max-width: 120px;
+    }
+  }
+}

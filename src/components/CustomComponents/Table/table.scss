@@ -1,0 +1,14 @@
+@import "../../../assets/styles/global.scss";
+.easy-table-wrapper {
+  .ant-table-wrapper .ant-table-thead > tr > th,
+  .ant-table-tbody {
+    color: var(--secondary-text);
+  }
+  .ant-table-tbody {
+    .ant-table-cell {
+      span {
+        color: var(--secondary-text);
+      }
+    }
+  }
+}

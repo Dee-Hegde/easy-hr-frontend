@@ -1,15 +1,15 @@
-import React from 'react';
-import './inputs.scss';
+import React from "react";
+import "./inputs.scss";
 
 const Inputs = (props) => {
   const {
-    type = 'text',
-    label = '',
-    name = '',
+    type = "text",
+    label = "",
+    name = "",
     isLableRequired = true,
     isErrorMessageRequired = true,
-    errorMessage = '',
-    placeholder = 'input',
+    errorMessage = "",
+    placeholder = "input",
     value,
     onChange,
     className,

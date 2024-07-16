@@ -7,7 +7,7 @@ import Buttons from '../../components/CustomComponents/Buttons/Buttons';
 import { Link, useNavigate } from 'react-router-dom';
 import { validateEmail, validatePassword } from '../../utils/utils';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchLoggedInUser } from '../../redux/users/actions';
+import { fetchLoggedInUser } from '../../redux/auth/actions';
 
 const Login = () => {
   const navigate = useNavigate();

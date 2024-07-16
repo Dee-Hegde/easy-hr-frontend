@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import 'antd/dist/reset.css';
 import AppLayouts from './layouts/AppLayouts';
 import Login from './containers/Login/Login';
 import SignUp from './containers/SignUp/SignUp';

@@ -1,11 +1,11 @@
-import axios from 'axios';
-import { getLocalStorage } from './storage-helper';
+import axios from "axios";
+import { getLocalStorage } from "./storage-helper";
 
 export const sendRequest = async (args) => {
   try {
     const { url, headers } = args;
     let headerParams;
-    const token = await JSON.parse(getLocalStorage('easyUserToken'));
+    const token = await JSON.parse(getLocalStorage("easyUserToken"));
     if (headers) {
       headerParams = {
         ...headers,
@@ -32,7 +32,7 @@ export const sendRequest = async (args) => {
 export const getRequest = async (args) => {
   const { data, headers, error, status } = await sendRequest({
     ...args,
-    method: 'get',
+    method: "get",
   });
   if (status === 200) {
     return {
@@ -52,7 +52,7 @@ export const getRequest = async (args) => {
 export const postRequest = async (args) => {
   const { data, headers, error, status } = await sendRequest({
     ...args,
-    method: 'post',
+    method: "post",
   });
 
   if ([200, 201, 204].indexOf(status) > -1) {
@@ -68,4 +68,10 @@ export const postRequest = async (args) => {
     error: error || data,
     status,
   };
+};
+
+export const attachParams = (baseUrl, params) => {
+  const url = new URL(baseUrl);
+  url.search = new URLSearchParams(params).toString();
+  return url;
 };

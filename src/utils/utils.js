@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const validateEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -17,4 +19,8 @@ export const validatePassword = (password) => {
         return false;
     }
     return true;
+};
+
+export const formatDate = (date, format) => {
+    return moment(date).format(format);
 };

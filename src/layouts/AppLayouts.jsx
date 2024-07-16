@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import './layouts.scss';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { commonIcons } from '../assets/images/common';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import AppLoader from '../components/CustomComponents/Loader/AppLoader';
 import { getLocalStorage } from '../utils/storage-helper';
+import { updateUserLoggedOut } from '../redux/auth/actions';
 
 const AppLayouts = (props) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const user = useSelector((state) => state?.user);
@@ -16,6 +18,10 @@ const AppLayouts = (props) => {
   const handleSidebar = () => {
     setExpandedMenu(!expandedMenu);
   };
+
+  const handleLogout = () => {
+    dispatch(updateUserLoggedOut());
+  }
 
   useEffect(() => {
     const userData = getLocalStorage('easyUserData');
@@ -118,14 +124,14 @@ const AppLayouts = (props) => {
               </Link>
             </li>
             <li>
-              <Link to={'/logout'}>
+              <p onClick={handleLogout}>
                 {' '}
                 <img
                   src={commonIcons?.Logout}
                   alt=''
                 />
                 <span> Logout</span>
-              </Link>
+              </p>
             </li>
             <li className='version-data'>V:0.0.1</li>
           </ul>

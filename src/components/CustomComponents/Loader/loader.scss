@@ -1,7 +1,9 @@
+@import "../../../assets/styles/global.scss";
 .loader-container {
   width: 100%;
   height: 100%;
   position: relative;
+  @include flexbox();
   .loader {
     border: 4px solid #f3f3f3;
     border-radius: 50%;
