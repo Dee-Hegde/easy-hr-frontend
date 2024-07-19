@@ -106,12 +106,12 @@ const AppLayouts = (props) => {
           </ul>
           <ul className='nav-link-wrapper'>
             <li>
-              <Link to={'/users'}>
+              <Link to={'/permissions'}>
                 <img
                   src={commonIcons?.User}
                   alt=''
                 />
-                <span>Users</span>
+                <span>Permissions</span>
               </Link>
             </li>
             <li>

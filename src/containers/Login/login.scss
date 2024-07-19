@@ -1,4 +1,4 @@
-@import '../../assets/styles/global.scss';
+@import "../../assets/styles/global.scss";
 .login-container {
   width: 100%;
   height: 100vh;
@@ -36,7 +36,7 @@
         }
       }
       .title {
-        @include fontStyles($size: 32px, $weight: 600);
+        @include fontstyles($size: 32px, $weight: 600);
       }
       .logo {
         width: 150px;
@@ -51,9 +51,9 @@
         .signup-link-wrapper {
           width: 100%;
           text-align: left;
-          @include fontStyles($size: 14px, $weight: 400);
+          @include fontstyles($size: 14px, $weight: 400);
           a {
-            @include fontStyles($size: 14px, $weight: 500);
+            @include fontstyles($size: 14px, $weight: 500);
             color: var(--primary-button-bg);
             &:hover {
               color: var(--primary-button-hover-bg);

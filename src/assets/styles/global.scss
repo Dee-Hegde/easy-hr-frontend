@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap");
 
 @mixin theme($mode: dark) {
   @if $mode == light {
@@ -28,6 +28,8 @@
 
     --primary-button-hover-bg: #00d86c;
     --secondary-button-hover-bg: #c0c4ea;
+
+    --border-color: #fcfcfc;
   }
 }
 * {
@@ -45,7 +47,7 @@ body {
   max-width: 1440px;
   margin: auto;
   overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   position: relative;
   font-size: 10px;
   @include theme(dark);
@@ -65,7 +67,7 @@ body {
   align-items: $align;
   gap: $gap;
 }
-@mixin fontStyles(
+@mixin fontstyles(
   $size: 14px,
   $weight: normal,
   $line-height: 150%,

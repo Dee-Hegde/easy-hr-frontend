@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from "react";
-import "./users.scss";
+import "./pagePermissions.scss";
 import TitleCard from "../../components/CustomComponents/TitleComponent/Title";
 import Buttons from "../../components/CustomComponents/Buttons/Buttons";
 import Inputs from "../../components/CustomComponents/Inputs/Inputs";
@@ -8,8 +8,10 @@ import Tables from "../../components/CustomComponents/Table/Table";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsersList } from "../../redux/users/actions";
 import { formatDate } from "../../utils/utils";
+import { Link } from "react-router-dom";
 
-const Users = () => {
+const PagePermissions
+ = () => {
   const dispatch = useDispatch();
   const userList = useSelector((state) => state.userList);
 
@@ -29,15 +31,15 @@ const Users = () => {
       title: "Name",
       dataIndex: "name",
       key: "name",
-      width: 150,
-      render: (text) => <span>{text}</span>,
-    },
-    {
-      title: "Status",
-      dataIndex: "isActive",
-      key: "isActive",
-      width: 200,
-      render: (isActive) => <span>{isActive ? "Active" : "Inactive"}</span>,
+      width: 250,
+      render: (text, record) => {
+        return (
+          <>
+            <Link to={`edit/${record._id}`}>{text}</Link>
+            <p>{record?.employeeId}</p>
+          </>
+        );
+      },
     },
     {
       title: "Role",
@@ -61,7 +63,7 @@ const Users = () => {
       render: (text) => <span>{formatDate(text, "DD/MM/YYYY")}</span>,
     },
     {
-      title: "Created By",
+      title: "Added & Updated By",
       dataIndex: "createdBy",
       key: "createdBy",
       width: 150,
@@ -73,6 +75,13 @@ const Users = () => {
       key: "lastUpdatedBy",
       width: 150,
       render: (text) => <span>{text}</span>,
+    },
+    {
+      title: "Status",
+      dataIndex: "isActive",
+      key: "isActive",
+      width: 200,
+      render: (isActive) => <span>{isActive ? "Active" : "Inactive"}</span>,
     },
     {
       title: "Action",
@@ -111,4 +120,5 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default PagePermissions
+;

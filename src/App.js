@@ -1,23 +1,24 @@
-import { Route, Routes } from 'react-router-dom';
-import AppLayouts from './layouts/AppLayouts';
-import Login from './containers/Login/Login';
-import SignUp from './containers/SignUp/SignUp';
-import Dashboard from './containers/Dashboard/Dashboard';
-import Candidates from './containers/Candidates/Candidates';
-import Users from './containers/Users/Users';
+import { Route, Routes } from "react-router-dom";
+import AppLayouts from "./layouts/AppLayouts";
+import Login from "./containers/Login/Login";
+import SignUp from "./containers/SignUp/SignUp";
+import Dashboard from "./containers/Dashboard/Dashboard";
+import Candidates from "./containers/Candidates/Candidates";
+import Users from "./containers/PagePermissions/PagePermissions";
+import UserPermissions from "./containers/UserPermissions/UserPermissions";
 
 function App() {
   const appRoutes = [
     {
-      path: '/',
+      path: "/",
       component: <Login />,
     },
     {
-      path: '/signup',
+      path: "/signup",
       component: <SignUp />,
     },
     {
-      path: '/dashboard',
+      path: "/dashboard",
       component: (
         <AppLayouts>
           <Dashboard />
@@ -25,7 +26,7 @@ function App() {
       ),
     },
     {
-      path: '/candidates',
+      path: "/candidates",
       component: (
         <AppLayouts>
           <Candidates />
@@ -33,7 +34,7 @@ function App() {
       ),
     },
     {
-      path: '/employees',
+      path: "/employees",
       component: (
         <AppLayouts>
           <Candidates />
@@ -41,7 +42,7 @@ function App() {
       ),
     },
     {
-      path: '/assets',
+      path: "/assets",
       component: (
         <AppLayouts>
           <Candidates />
@@ -49,7 +50,7 @@ function App() {
       ),
     },
     {
-      path: '/clients',
+      path: "/clients",
       component: (
         <AppLayouts>
           <Candidates />
@@ -57,7 +58,7 @@ function App() {
       ),
     },
     {
-      path: '/users',
+      path: "/permissions",
       component: (
         <AppLayouts>
           <Users />
@@ -65,7 +66,15 @@ function App() {
       ),
     },
     {
-      path: '/settings',
+      path: "permissions/edit/:id",
+      component: (
+        <AppLayouts>
+          <UserPermissions />
+        </AppLayouts>
+      ),
+    },
+    {
+      path: "/settings",
       component: (
         <AppLayouts>
           <Candidates />
@@ -82,6 +91,7 @@ function App() {
             path={item.path}
             element={item.component}
             data={item}
+            exact
           />
         ))}
       </Routes>

@@ -6,7 +6,8 @@
   }
   .ant-table-tbody {
     .ant-table-cell {
-      span {
+      span,
+      p {
         color: var(--secondary-text);
       }
     }

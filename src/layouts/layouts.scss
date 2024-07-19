@@ -21,7 +21,7 @@
       }
     }
     .user-info {
-      @include fontStyles();
+      @include fontstyles();
     }
   }
   .content-wrapper {
@@ -74,7 +74,7 @@
         height: 40px;
         margin: auto;
         padding: 8px 12px;
-        @include fontStyles();
+        @include fontstyles();
         cursor: pointer;
         list-style: none;
         a,
@@ -96,7 +96,7 @@
         width: 100%;
         justify-content: flex-start;
         text-align: left !important;
-        @include fontStyles($size: 10px);
+        @include fontstyles($size: 10px);
         &:hover {
           background: var(--primary-background-2);
           cursor: default;

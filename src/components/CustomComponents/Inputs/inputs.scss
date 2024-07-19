@@ -1,4 +1,4 @@
-@import '../../../assets//styles/global.scss';
+@import "../../../assets//styles/global.scss";
 
 .i-wrapper {
   width: 100%;
@@ -12,7 +12,7 @@
   position: relative;
   .i-label {
     padding-left: 4px;
-    @include fontStyles(
+    @include fontstyles(
       $size: 14px,
       $weight: normal,
       $line-height: 150%,
@@ -28,7 +28,7 @@
     border-radius: 6px;
     background: var(--primary-background-1);
     color: var(--primary-text);
-    @include fontStyles(
+    @include fontstyles(
       $size: 14px,
       $weight: normal,
       $line-height: 150%,
